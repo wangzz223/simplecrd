@@ -30,13 +30,13 @@ echo ${CODEGEN_PKG}
 echo "$(dirname "${BASH_SOURCE[0]}")/../../.."
 readlink -f "$(dirname "${BASH_SOURCE[0]}")/../../.."
 kube::codegen::gen_helpers \
-    --input-pkg-root github.com/wangzz223/simplecrd/pkg/apis \
+    --input-pkg-root wangzz223/simplecrd/pkg/apis \
     --output-base "$(dirname "${BASH_SOURCE[0]}")/../../.." \
     --boilerplate "${SCRIPT_ROOT}/hack/boilerplate.go.txt"
 
 kube::codegen::gen_client \
     --with-watch \
-    --input-pkg-root github.com/wangzz223/simplecrd/pkg/apis \
-    --output-pkg-root github.com/wangzz223/simplecrd/pkg/generated \
+    --input-pkg-root wangzz223/simplecrd/pkg/apis \
+    --output-pkg-root wangzz223/simplecrd/pkg/generated \
     --output-base "$(dirname "${BASH_SOURCE[0]}")/../../.." \
     --boilerplate "${SCRIPT_ROOT}/hack/boilerplate.go.txt"
